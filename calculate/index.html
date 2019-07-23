@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Person Form!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="calcCtrl.js"></script>
+    <script src="operatorCtrl.js"></script>
+    <script src="outerCtrl.js"></script>
+</head>
+<body >
+
+    <div ng-controller="calcCtrl">
+            <h1>Calculator</h1>
+            <input type="number" ng-model="number1" placeholder="Enter number"/>
+            <p>{{operator}}  </p>    
+            
+            <input type="number" id="age" ng-model="number2" placeholder="Enter number"/>
+            <br><br>
+            <select id="operator" ng-model="operator" ng-init="operator = '+'" >
+                    <option value='+'>+</option>
+                    <option value='-'>-</option>
+                    <option value='*'>*</option>
+                    <option value='/'>/</option>
+                </select>
+                <br> <br><br>
+            <div ng-controller="operatorCtrl">
+                <button ng-click="printValue()">Calculate</button>
+                <p ng-model="result">= {{result}}</p>
+            </div>
+            <br><br>
+    </div>
+    <br>
+    <div ng-controller="outerCtrl">
+        <h2 ng-model="result">result from root = {{result}}</h2>
+    </div>
+</body>
+</html>
